@@ -10,7 +10,7 @@
                 <label for="name">Nome</label>
             </div>
             <div class="input-field col s4">
-                <input id="editPrice" name="price" type="number" class="validate" value="" required>
+                <input id="editPrice" name="price" type="number" class="validate" min="0" value="" required>
                 <label for="price">Valor unitário</label>
             </div>
             <div class="input-field col s4">

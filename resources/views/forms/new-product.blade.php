@@ -9,7 +9,7 @@
                 <label for="name">Nome</label>
             </div>
             <div class="input-field col s6">
-                <input id="price" name="price" type="number" class="validate" required>
+                <input id="price" name="price" type="number" class="validate" min="0" required>
                 <label for="price">Valor unitário</label>
             </div>
         </div>

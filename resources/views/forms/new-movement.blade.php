@@ -31,13 +31,13 @@
                 <label>Produto</label>
             </div>
             <div class="input-field col s2">
-                <input id="quantity" name="quantity" type="number" class="validate" required>
+                <input id="quantity" min="1" step="1" name="quantity" type="number" class="validate" required>
                 <label for="quantity">Quantidade</label>
             </div>
         </div>
         <div class="row">
         <div class="input-field col s3">
-                <input id="delivery" name="delivery_price" type="number" class="validate">
+                <input id="delivery" name="delivery_price" type="number" class="validate" min="0">
                 <label for="delivery">Valor do Frete</label>
             </div>
         </div>
