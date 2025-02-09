@@ -16,7 +16,7 @@
 
         <!-- Modal Structure -->
         <div id="modal1" class="modal col">
-            @include('forms.new-movement')
+            @include('forms.new-report')
         </div>
     </div>
 @endsection

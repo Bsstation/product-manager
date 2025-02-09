@@ -5,7 +5,10 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MovementController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\ReportController;
+
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Xml\Report;
 
 Route::get('/', [SiteController::class, 'index'])->name('site.home');
 Route::get('/movements', [SiteController::class, 'movements'])->name('site.movements');
@@ -21,6 +24,9 @@ Route::post('/companies/store', [CompanyController::class, 'store'])->name('comp
 Route::post('/companies/update', [CompanyController::class, 'update'])->name('companies.update');
 
 Route::post('/movements/store', [MovementController::class, 'store'])->name('movements.store');
+
+Route::post('/reports/create', [ReportController::class, 'create'])->name('reports.create');
+Route::post('/report/print', [ReportController::class, 'print'])->name('report.print');
 
 Route::post('/auth', [LoginController::class, 'auth'])->name('login.auth');
 Route::get('/logout',[LoginController::class, 'logout'])->name('login.logout');
