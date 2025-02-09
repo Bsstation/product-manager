@@ -21,3 +21,7 @@ main {
 .sidenav li>a {
     color: white;
 }
+
+.dropdown-content {
+    max-height: 300px;
+}
