@@ -1,9 +1,9 @@
-<form action="{{ route('products.edit') }}" method="post" class="col s12">
+<form action="{{ route('products.update') }}" method="post" class="col s12">
     @csrf
     <div></div>
     <div class="modal-content">
         <h4>Editar Produto</h4>
-        <input type="hidden" id="editId" value="">
+        <input type="hidden" name="id" id="editId" value="">
         <div class="row">
             <div class="input-field col s4">
                 <input id="editName" name="name" type="text" class="validate" value="" required>
@@ -30,6 +30,6 @@
         </div>
     </div>
     <div class="modal-footer">
-        <button class="btn waves-effect waves-light" type="submit">Adicionar</button>
+        <button class="btn waves-effect waves-light" type="submit">Atualizar</button>
     </div>
 </form>

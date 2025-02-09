@@ -15,10 +15,10 @@ Route::get('/reports', [SiteController::class, 'reports'])->name('site.reports')
 Route::get('/login', [SiteController::class, 'login'])->name('site.login');
 
 Route::post('/products/store', [ProductController::class, 'store'])->name('products.store');
-Route::post('/products/edit', [ProductController::class, 'edit'])->name('products.edit');
+Route::post('/products/update/', [ProductController::class, 'update'])->name('products.update');
 
 Route::post('/companies/store', [CompanyController::class, 'store'])->name('companies.store');
-Route::post('/companies/edit', [CompanyController::class, 'edit'])->name('companies.edit');
+Route::post('/companies/update', [CompanyController::class, 'update'])->name('companies.update');
 
 Route::post('/movements/store', [MovementController::class, 'store'])->name('movements.store');
 

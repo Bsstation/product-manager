@@ -12,9 +12,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::where('status', 'enable')->get();
-
-        return response()->json($products);
+        
     }
 
     /**
@@ -30,7 +28,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // Validação dos dados do formulário
         $request->validate([
             'name' => 'required|string|max:255',
             'price' => 'required|numeric',
@@ -57,17 +54,24 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Product $product)
+    public function edit(Request $request)
     {
-        return redirect(route('site.products'));
+        
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request)
     {
-        //
+        Product::where('id', $request->id)->update([
+            'name' => $request->name,
+            'price' => $request->price,
+            'description' => $request->description,
+            'status' => $request->status,
+        ]);
+
+        return redirect(route('site.products'));
     }
 
     /**
