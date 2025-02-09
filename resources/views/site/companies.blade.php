@@ -31,7 +31,8 @@
                             <td>{{ $company->adress }}</td>
                             <td>{{ $company->status == 'enabled' ? 'Ativo' : 'Desativado' }}</td>
                             <td>
-                                <button class="btn-floating btn-small waves-effect waves-light blue modal-trigger" href="#modal2"><i class="material-icons">edit</i></a>
+                                <button class="btn-floating btn-small waves-effect waves-light blue modal-trigger" data-item="{{ json_encode($company) }}"
+                                    onclick="editCompany(this)" href="#modal2"><i class="material-icons">edit</i></a>
                             </td>
                         </tr>
                         @endforeach

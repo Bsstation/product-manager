@@ -15,6 +15,7 @@
             </div>
             <div class="input-field col s4">
                 <select name="status" id="editStatus">
+                    <option value="" disabled selected>Selecione uma opção</option>
                     <option value="enabled">Ativo</option>
                     <option value="disabled">Desativado</option>
                 </select>

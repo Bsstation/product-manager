@@ -25,8 +25,8 @@
                             <td>R$ {{ number_format($product->price, 2, ',', '.') }}</td>
                             <td>{{ $product->status == 'enabled' ? 'Ativo' : 'Desativado' }}</td>
                             <td>
-                                <button class="btn-floating btn-small waves-effect waves-light blue modal-trigger" 
-                                    onclick="editProduct('{{ $product->id }}', '{{ $product->name }}' , '{{ $product->price }}', '{{$product->description}}', '{{$product->status}}')" href="#modal2"><i class="material-icons">edit</i></a>
+                                <button class="btn-floating btn-small waves-effect waves-light blue modal-trigger" data-item="{{ json_encode($product) }}" 
+                                    onclick="editProduct(this)" href="#modal2"><i class="material-icons">edit</i></a>
                             </td>
                         </tr>
                         @endforeach

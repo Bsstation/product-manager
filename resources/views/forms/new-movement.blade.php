@@ -6,6 +6,7 @@
         <div class="row">
             <div class="input-field col s3">
                 <select name="flux">
+                    <option value="" disabled selected>Selecione uma opção</option>
                     <option value="In">Entrada</option>
                     <option value="Out">Saída</option>
                 </select>

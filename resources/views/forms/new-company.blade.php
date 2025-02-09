@@ -10,6 +10,7 @@
             </div>
             <div class="input-field col s6">
                 <select name="type">
+                    <option value="" disabled selected>Selecione uma opção</option>
                     <option value="PF">Pessoa Física</option>
                     <option value="PJ">Pessoa Jurídica</option>
                 </select>
