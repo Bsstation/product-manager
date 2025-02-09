@@ -42,11 +42,11 @@
             </div>
         @else
             <div class="row">
-                <div class="col s6">
+                <div class="col s12 m6">
                     <h3>Ainda não há produtos cadastrados, vamos adicionar um?</h3>
                 </div>
                 <!-- Add Modal Trigger -->
-                <div class="center-align col s6">
+                <div class="center-align col s12 m6">
                     <br><br>
                     <a class="waves-effect waves-light btn-large modal-trigger" href="#modal1">Adicionar</a>
                 </div>
