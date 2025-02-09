@@ -5,15 +5,16 @@
         <h4>Adicionar Movimentação</h4>
         <div class="row">
             <div class="input-field col s3">
-                <select name="flux">
-                    <option value="" disabled selected>Selecione uma opção</option>
+                <select name="flux" required>
+                    <option value="" disabled selected>Selecione o fluxo</option>
                     <option value="In">Entrada</option>
                     <option value="Out">Saída</option>
                 </select>
                 <label>Fluxo</label>
             </div>
-            <div class="input-field col s3">
-                <select name="company_id">
+            <div class="input-field col s4">
+                <select name="company_id" required>
+                    <option value="" disabled selected>Selecione a empresa</option>
                     @foreach ($companies as $company)
                         <option value="{{$company->id}}">{{$company->name}}</option>
                     @endforeach
@@ -21,15 +22,16 @@
                 <label>Empresa</label>
             </div>
             <div class="input-field col s3">
-                <select name="product_id">
+                <select name="product_id" required>
+                    <option value="" disabled selected>Selecione um produto</option>
                     @foreach ($products as $product)
                         <option value="{{$product->id}}">{{$product->name}}</option>
                     @endforeach
                 </select>
                 <label>Produto</label>
             </div>
-            <div class="input-field col s3">
-                <input id="quantity" name="quantity" type="number" class="validate">
+            <div class="input-field col s2">
+                <input id="quantity" name="quantity" type="number" class="validate" required>
                 <label for="quantity">Quantidade</label>
             </div>
         </div>

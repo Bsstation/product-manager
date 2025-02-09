@@ -6,15 +6,15 @@
         <input type="hidden" id="editId" value="">
         <div class="row">
             <div class="input-field col s4">
-                <input id="editName" name="name" type="text" class="validate" value="">
+                <input id="editName" name="name" type="text" class="validate" value="" required>
                 <label for="name">Nome</label>
             </div>
             <div class="input-field col s4">
-                <input id="editPrice" name="price" type="number" class="validate" value="">
+                <input id="editPrice" name="price" type="number" class="validate" value="" required>
                 <label for="price">Valor unitário</label>
             </div>
             <div class="input-field col s4">
-                <select name="status" id="editStatus">
+                <select name="status" id="editStatus" required>
                     <option value="" disabled selected>Selecione uma opção</option>
                     <option value="enabled">Ativo</option>
                     <option value="disabled">Desativado</option>

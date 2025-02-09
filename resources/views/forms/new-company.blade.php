@@ -5,11 +5,11 @@
         <h4>Adicionar Empresa</h4>
         <div class="row">
             <div class="input-field col s6">
-                <input id="name" name="name" type="text" class="validate" data-length="20">
+                <input id="name" name="name" type="text" class="validate" data-length="20" required>
                 <label for="name">Nome</label>
             </div>
             <div class="input-field col s6">
-                <select name="type">
+                <select name="type" required>
                     <option value="" disabled selected>Selecione uma opção</option>
                     <option value="PF">Pessoa Física</option>
                     <option value="PJ">Pessoa Jurídica</option>
@@ -19,13 +19,13 @@
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="document" name="document" type="text" class="validate" data-length="20">
-                <label for="document">Documento</label>
+                <input id="document" name="document" type="text" class="validate" data-length="20" required>
+                <label for="document">Número do Documento (CPF/CNPJ)</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="adress" name="adress" type="text" class="validate">
+                <input id="adress" name="adress" type="text" class="validate" required>
                 <label for="adress">Endereço</label>
             </div>
         </div>
