@@ -49,3 +49,53 @@ function editCompany(button)
     M.updateTextFields();
     M.FormSelect.init(document.querySelectorAll('select'));
 }
+
+function formatDocument(input, isEdit = true) {
+    tempId = (isEdit) ? 'editType' : 'type';
+
+    type = document.getElementById(tempId).value;
+
+    let value = input.value.replace(/\D/g, '');
+
+    if (type === 'PF') {
+        input.maxLength = 14; 
+        if (value.length <= 11) {
+            value = value.replace(/(\d{3})(\d)/, '$1.$2');
+            value = value.replace(/(\d{3})(\d)/, '$1.$2');
+            value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+        }
+    }else{
+        input.maxLength = 18;
+        if (value.length <= 14) {
+            value = value.replace(/(\d{2})(\d)/, '$1.$2');
+            value = value.replace(/(\d{3})(\d)/, '$1.$2');
+            value = value.replace(/(\d{3})(\d)/, '$1/$2');
+            value = value.replace(/(\d{4})(\d{1,2})$/, '$1-$2');
+        }
+    }
+
+    input.value = value;
+}
+
+function clearDocumentField(isEdit = true) {
+    tempId = (isEdit) ? 'editDocument' : 'document';
+    
+    const input = document.getElementById(tempId);
+    input.value = '';
+}
+
+document.getElementById('type').addEventListener('change', function() {
+    clearDocumentField(false);
+});
+
+document.getElementById('editType').addEventListener('change', function() {
+    clearDocumentField(true);
+});
+
+document.getElementById('document').addEventListener('input', function() {
+    formatDocument(this, false);
+});
+
+document.getElementById('editDocument').addEventListener('input', function() {
+    formatDocument(this, true);
+});
