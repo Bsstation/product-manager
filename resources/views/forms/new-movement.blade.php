@@ -37,7 +37,7 @@
         </div>
         <div class="row">
         <div class="input-field col s3">
-                <input id="delivery" name="delivery_price" type="number" class="validate" min="0">
+                <input id="delivery" name="delivery_price" type="number" class="validate" step="0.01" min="0">
                 <label for="delivery">Valor do Frete</label>
             </div>
         </div>
