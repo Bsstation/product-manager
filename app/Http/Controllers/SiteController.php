@@ -15,8 +15,8 @@ class SiteController extends Controller
         if(auth()->check()){
             $movements = Movement::paginate(5);
 
-            $products = Product::where('status', 'enable')->get();
-            $companies = Company::where('status', 'enable')->get();
+            $products = Product::where('status', 'enabled')->get();
+            $companies = Company::where('status', 'enabled')->get();
 
             return view('site.home', [
                 'movements' => $movements,
@@ -46,8 +46,8 @@ class SiteController extends Controller
     {
         $movements = Movement::paginate(5);
 
-        $products = Product::where('status', 'enable')->get();
-        $companies = Company::where('status', 'enable')->get();
+        $products = Product::where('status', 'enabled')->get();
+        $companies = Company::where('status', 'enabled')->get();
 
         return view('site.movements', [
             'movements' => $movements,
@@ -57,8 +57,8 @@ class SiteController extends Controller
     }
 
     public function reports() {
-        $products = Product::where('status', 'enable')->get();
-        $companies = Company::where('status', 'enable')->get();
+        $products = Product::where('status', 'enabled')->get();
+        $companies = Company::where('status', 'enabled')->get();
 
         return view('site.reports', [
             'products' => $products,
