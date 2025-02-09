@@ -19,6 +19,15 @@ function initializeElements()
         var elems = document.querySelectorAll('.sidenav');
         var instances = M.Sidenav.init(elems);
     });
+
+    //Dat Picker
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.datepicker');
+        var instances = M.Datepicker.init(elems);
+    });
+
+    M.updateTextFields();
+    M.FormSelect.init(document.querySelectorAll('select'));
 }
 
 function editProduct(button)
