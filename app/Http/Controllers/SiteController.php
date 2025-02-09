@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Company;
 use App\Models\Movement;
+use Carbon\Carbon;
 
 class SiteController extends Controller
 {
     public function index()
     {
-        $movements = Movement::paginate(5);
+        $today = Carbon::today();
+
+        $movements = Movement::whereDate('created_at', $today)->paginate(5);
 
         $products = Product::where('status', 'enabled')->get();
         $companies = Company::where('status', 'enabled')->get();
