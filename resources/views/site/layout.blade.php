@@ -1,3 +1,9 @@
+@if (Auth::guest())
+    <script type="text/javascript">
+        window.location = "{{ route('site.login') }}";
+    </script>
+@endif
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

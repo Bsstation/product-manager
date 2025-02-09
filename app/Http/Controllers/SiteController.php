@@ -6,26 +6,20 @@ use App\Models\Product;
 use App\Models\Company;
 use App\Models\Movement;
 
-use Illuminate\Support\Facades\Auth;
-
 class SiteController extends Controller
 {
     public function index()
     {
-        if(auth()->check()){
-            $movements = Movement::paginate(5);
+        $movements = Movement::paginate(5);
 
-            $products = Product::where('status', 'enabled')->get();
-            $companies = Company::where('status', 'enabled')->get();
+        $products = Product::where('status', 'enabled')->get();
+        $companies = Company::where('status', 'enabled')->get();
 
-            return view('site.home', [
-                'movements' => $movements,
-                'products' => $products,
-                'companies' => $companies,
-            ]);
-        }else{
-            return $this->login();
-        }
+        return view('site.home', [
+            'movements' => $movements,
+            'products' => $products,
+            'companies' => $companies,
+        ]);
     }
 
     public function products()
