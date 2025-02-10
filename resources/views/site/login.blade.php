@@ -5,9 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
+    <link rel="icon" href="{{ asset('images/icon.png') }}" type="image/x-icon">
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <style>
+        body {
+            background-color: #188577;
+        }
+    </style>
 <body>
     @if($mensagem = Session::get('error'))
         {{ $mensagem }}
@@ -30,9 +38,6 @@
             </div>
         </div>
     </div>
-
-
-
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

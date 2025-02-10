@@ -1,11 +1,24 @@
+:root {
+    --main-color: #188577;
+}
+
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-color: rgb(245, 245, 245);
 }
 
 main {
     flex: 1 0 auto;
+}
+
+nav {
+    background-color: var(--main-color);
+}
+
+.pagination li.active {
+    background-color: var(--main-color);
 }
 
 @media only screen and (min-width: 993px) {
@@ -15,7 +28,7 @@ main {
 }
 
 .sidenav {
-    background-color: #ee6e73;
+    background-color: var(--main-color);
 }
 
 .sidenav li>a {
@@ -24,4 +37,8 @@ main {
 
 .dropdown-content {
     max-height: 300px;
+}
+
+.page-footer {
+    background-color: var(--main-color);
 }
