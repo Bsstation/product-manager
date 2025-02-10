@@ -66,7 +66,7 @@ function formatDocument(input, isEdit = true) {
 
     let value = input.value.replace(/\D/g, '');
 
-    if (type === 'PF') {
+    if (type == 'PF') {
         input.maxLength = 14; 
         if (value.length <= 11) {
             value = value.replace(/(\d{3})(\d)/, '$1.$2');
