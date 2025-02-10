@@ -49,7 +49,7 @@ class Movement extends Model
     }
 
     public function getFormatedDeliveryValue(){
-        return 'R$ ' . number_format($this->delivery_value, 2, ',', '.');
+        return 'R$ ' . number_format($this->delivery_price, 2, ',', '.');
     }
 
     public function getTotalValue($formated = false){

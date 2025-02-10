@@ -53,14 +53,16 @@ class ReportController extends Controller
             }
         }
 
+        $today = Carbon::today()->format('d/m/Y');
+
         $pdf = Pdf::loadView('pdf.report', [
-                'title' => 'Teste',
+                'title' => 'Relatório',
                 'movements' => $movements,
                 'totalIn' => $totalIn,
                 'totalOut' => $totalOut,
-                'today' => Carbon::today()->format('d/m/Y'),
+                'today' => $today,
             ]);
 
-        return $pdf->stream('meu_pdf_exemplo.pdf');
+        return $pdf->stream('relatório.pdf');
     }
 }
