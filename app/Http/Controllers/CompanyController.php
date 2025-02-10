@@ -38,7 +38,7 @@ class CompanyController extends Controller
         Company::create([
             'name' => $request->name,
             'type' => $request->type,
-            'document' => $request->document,
+            'document' => preg_replace('/\D/', '', $request->document),
             'adress' => $request->adress,
         ]);
 
@@ -69,7 +69,7 @@ class CompanyController extends Controller
         Company::where('id', $request->id)->update([
             'name' => $request->name,
             'type' => $request->type,
-            'document' => $request->document,
+            'document' => preg_replace('/\D/', '', $request->document),
             'adress' => $request->adress,
             'status' => $request->status,
         ]);
