@@ -4,10 +4,9 @@
 
 @section('content')
     <div class="container mt-2 mb-2">
-        <h1>Olá, {{auth()->user()->name}}!</h1>
         @if($movements->count() > 0)
             <div class="row">
-                <h2>Olá, {{auth()->user()->name}}!</h2>
+                <h2>Olá, {{Auth::user()->name}}!</h2>
                 <h3>Aqui estão suas movimentações do dia.</h3>
             </div>
             <div class="row">
@@ -24,8 +23,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            @foreach ($movements as $movement)
+                        @foreach ($movements as $movement)
+                            <tr>
                                 <td>{{$movement->getFormatedDate()}}</td>
                                 <td>{{$movement->getProductsFormatedNames()}}</td>
                                 <td>{{$movement->getFormatedFlux()}}</td>
@@ -33,8 +32,8 @@
                                 <td>{{$movement->user->name}}</td>
                                 <td>{{$movement->getFormatedDeliveryValue()}}</td>
                                 <td>{{$movement->getTotalValue(true)}}</td>
-                            @endforeach
-                        </tr>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

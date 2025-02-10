@@ -20,8 +20,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            @foreach ($movements as $movement)
+                        @foreach ($movements as $movement)
+                            <tr>
                                 <td>{{$movement->getFormatedDate()}}</td>
                                 <td>{{$movement->getProductsFormatedNames()}}</td>
                                 <td>{{$movement->getFormatedFlux()}}</td>
@@ -29,8 +29,8 @@
                                 <td>{{$movement->user->name}}</td>
                                 <td>{{$movement->getFormatedDeliveryValue()}}</td>
                                 <td>{{$movement->getTotalValue(true)}}</td>
-                            @endforeach
-                        </tr>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
