@@ -43,10 +43,24 @@ class ReportController extends Controller
 
         $movements = $movements->get();
 
-        $pdf = Pdf::loadView('pdf.report', ['title' => 'Teste', 'movements' => $movements]);
+        $totalIn = $totalOut = 0;
+
+        foreach($movements as $movement){
+            if($movement->flux == 'In'){
+                $totalIn += $movement->getTotalValue();
+            }else{
+                $totalOut += $movement->getTotalValue();
+            }
+        }
+
+        $pdf = Pdf::loadView('pdf.report', [
+                'title' => 'Teste',
+                'movements' => $movements,
+                'totalIn' => $totalIn,
+                'totalOut' => $totalOut,
+                'today' => Carbon::today()->format('d/m/Y'),
+            ]);
 
         return $pdf->stream('meu_pdf_exemplo.pdf');
-
-        //return view('pdf.report', ["movements" => $movements]);
     }
 }
