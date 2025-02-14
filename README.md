@@ -68,3 +68,9 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## Credits to Authors
 
 <a href="https://www.flaticon.com/free-icons/product" title="product icons">Product icons created by Freepik - Flaticon</a>
+
+## Dependences
+
+- PHP 8.2
+- Laravel 11.31
+- barryvdh/laravel-dompdf 3.1
