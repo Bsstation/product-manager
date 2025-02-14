@@ -74,3 +74,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 - PHP 8.2
 - Laravel 11.31
 - barryvdh/laravel-dompdf 3.1
+
+## Init Database
+
+- php artisan migrate:refresh --seed
